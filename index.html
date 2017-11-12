@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+	
+	.menu {
+		  float:left;
+		  width:20%;
+		  text-align:center;
+		  padding: left;
+		  
+		  padding-bottom: 40%;
+		  background-color:#2F4F4F;
+
+    
+    
+    
+			}
+	.menuitem {
+		  background-color:#3CB371;
+		  padding:7px;
+		  margin-top:4px;
+			}	
+	.header {
+		padding-bottom: 20%;
+		background-color: #90EE90;
+		text-align: center;
+
+
+	}			
+	.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:19px;
+  margin-left: 90px;
+  text-align:center;
+  padding-bottom: 160px;
+
+	}
+	.left {
+  background-color:#e5e5e5;
+  float:right;
+  width:30%;
+
+  padding-left:35px;
+  margin-top:19px;
+  margin-right: 195px;
+  text-align:center;
+  padding-bottom: 230px;
+
+	}
+</style>
+<head>
+	<title>Resume</title>
+</head>
+<body>
+
+<div style="overflow:auto;background-color:#90EE90;"> 
+
+	<div class="menu">
+		    <div class="menuitem"><a href="#home">Home</a></div>
+		    <div class="menuitem"><a href="#about">About</a></div>
+		    <div class="menuitem"><a href="#skills">Skills</a></div>
+		    <div class="menuitem"><a href="#experiences">Experiences</a></div>
+		    <div class="menuitem"><a href="#education">Education</a></div>
+		    <div class="menuitem"><a href="#portfolio">Portfolio</a></div>
+		    <div class="menuitem"><a href="#blogs">Blogs And Websites</a></div>
+		    <div class="menuitem"><a href="#contact">Contact</a></div>
+		   
+
+	</div>
+	<div class="header">
+		<div >
+		  <h1>Hello World</h1>
+		</div>
+
+	</div>	
+	
+	<div class="main" style="Background-color:#FAF0E6;">
+		<!-- <div class="section" style="Background-color:red;">
+			<h3>hlllo</h3>
+		</div> -->
+		<div id="home" class="page">
+			<div class="article" style="padding-bottom:28%;">
+			    <div class="right">
+				     <img src="img/n.gif" alt="portfolio" usemap="#workmap" style="width:248px;height:150px;" >
+
+						<map name="workmap">
+						  <area shape="rect" coords="34,44,270,350" alt="Sun" href="computer.htm">
+						  <area shape="rect" coords="290,172,333,250" alt="Mercury" href="phone.htm">
+						  <area shape="circle" coords="337,300,44" alt="Venus" href="coffee.htm">
+						</map>
+				</div>
+				<div class="left">
+				    <h2>About</h2>
+				    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				</div>
+			</div>    
+	   <!--  <div class="section" style="Background-color:red;">
+			<h3>hlllo2</h3>
+		</div> -->
+		</div>
+		<div id="about" class="page">
+			
+		</div>
+		<div id="skills" class="page">
+			
+		</div>
+		<div id="experiences" class="page">
+			
+		</div>
+		<div id="education" class="page">
+			
+		</div>
+		<div id="portofolio" class="page">
+			
+		</div>
+		<div id="blogs" class="page">
+			
+		</div>
+		<div id="contact" class="page">
+			<h3 style="aligment:center;">Contact Form</h3>
+		</div>
+  	</div>	
+
+</div> 
+<script type="text/javascript">
+	$(function() {
+
+//Image by Ivaylo Yovchev (  http://ivayloyovchev.com/weddings )
+  
+	//elements
+	var $menu = $(".menu");
+	var $pages = $(".page");
+	var $menuitem = $menu.find("div").not(".home");
+	var $home = $menu.find(".home");
+	
+	//interna vars
+	var currentPage = "";
+	
+	$toHome.on("click", function() {
+		currentPage = "";
+		TweenMax.to($pages, 0.5, {
+			left: "-70%"
+		});
+		TweenLite.to($menuLi.filter(".active"), 0.5, {
+			className: "-=active"
+		});
+	});
+	
+	$menuLi.on("click", function(event) {
+		
+		var $this = $(this);
+		var thisHref = $this.find("a").attr("href");
+		
+		if (currentPage !== thisHref && $pages.filter(thisHref).length > 0) {
+			currentPage = thisHref;
+			TweenMax.to($pages, 0.5, {
+				left: "-70%"
+			});
+			TweenMax.to($pages.filter(thisHref), 0.5, {
+				left: 0
+			});
+			TweenLite.to($menuLi.filter(".active"), 0.5, {
+				className: "-=active"
+			});
+			TweenLite.to($this, 0.5, {
+				className: "+=active"
+			});
+		}
+		
+		event.preventDefault();
+	});
+});
+</script>
+<!-- // <script type="text/javascript">
+// $(function(){
+//   $("#nav a").click(function(e){
+//     e.preventDefault();
+//     $('html,body').scrollTo(this.hash,this.hash); 
+//   });
+// });
+// </script>
+	  -->
+
+</body>
+</html>
